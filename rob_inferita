@@ -1,0 +1,2148 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/rob_inferita#"
+     xml:base="http://www.semanticweb.org/rob_inferita"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rob="http://www.semanticweb.org/rob#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:core="http://purl.org/ontology/rec/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/rob_inferita"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rob#belongs_saga -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#belongs_saga">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rob#has_book"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#book_similar_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#book_similar_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#book_tag -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#book_tag">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#favourite_book -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#favourite_book">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rob#likes_book"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#favourite_genre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#favourite_genre">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/rob#likes_genre"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#favourite_book"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#genre"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#genre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#genre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#has_book -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#has_book"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#has_member -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#has_member">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rob#is_member_of"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#is_member_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#is_member_of">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#likes_book -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#likes_book">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#likes_genre -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#likes_genre">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#recommendation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#recommendation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rob#recommendation_for"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#recommendation_for -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#recommendation_for">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#saga_tag -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#saga_tag">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#user_similar_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#user_similar_to">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#user_tag -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#user_tag">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#was_written_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#was_written_by">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/rob#wrote"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#wrote -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/rob#wrote">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Author"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/rob#Book"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rob#copies_sold -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rob#copies_sold">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#published_in -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/rob#published_in">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/Agent -->
+
+    <owl:Class rdf:about="http://purl.org/dc/terms/Agent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Author">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rob#wrote"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/rob#Book"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:comment xml:lang="en">Subclass of User with comprises anyone who has written a book. In any case there may also be recommendations for authors, because the recommendations are for all the users, not only for the readers.</rdfs:comment>
+        <rdfs:label xml:lang="en">A writer of a book.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#BestSeller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#BestSeller">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rdfs:comment xml:lang="en">In this ontology we have done a semplification, we have assumed that book is a bestseller if it sold at least 10.000 copies this in order to not implement the question of time.</rdfs:comment>
+        <rdfs:label xml:lang="en">A new book or other product that has sold a great number of copies</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Book -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Book">
+        <rdfs:comment xml:lang="en">The focus of this ontology is the book, in fact he is the subject of a reccomendation</rdfs:comment>
+        <rdfs:label xml:lang="en">A written or printed work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Book_Serie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Book_Serie">
+        <rdfs:label xml:lang="en">Collection of books  that are formally identified together as a group. This in according to the pattern Submissions:CollectionEntity. If there are 2 books in a series it&apos;s called Duology, with 3 books it&apos;s called Trilogy and so on.</rdfs:label>
+        <rdfs:label xml:lang="en">Sequence of books having certain characteristics in common.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Books_Recommendation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Books_Recommendation">
+        <rdfs:comment xml:lang="en">A recommendation of books for a specific system user. In particulary a recommendation is a collection of books according to the pattern Submissions:CollectionEntity. The is one recommendation for each user of the system.</rdfs:comment>
+        <rdfs:label xml:lang="en">A recommendation of a books for a specific user</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Crime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Crime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdfs:comment xml:lang="en">Fiction about a crime, how the criminal gets caught and serve time, and the repercussions of the crime</rdfs:comment>
+        <rdfs:label xml:lang="en">Crime genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Famous_Author -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Famous_Author">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/rob#wrote"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/rob#BestSeller"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Author"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rdfs:comment xml:lang="en">The class is inferred by a swrl rule that checks is an author wrote a bestseller.</rdfs:comment>
+        <rdfs:label xml:lang="en">Who wrote a Bestseller.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Fantasy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Fantasy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdfs:comment xml:lang="en">Fantasy is a genre of speculative fiction set in a fictional universe, often inspired by real world myth and folklore.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fantasy genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Fiction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Fiction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">We use Fiction as the first level of taxonomy of literary genres in according to Wikipedia</rdfs:comment>
+        <rdfs:label xml:lang="en">Narrative form not based strictly on history or fact.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Horror -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Horror">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdfs:comment xml:lang="en">Horror is a genre of speculative fiction which is intended to frighten, scare, disgust, or startle its readers by inducing feelings of horror and terror.</rdfs:comment>
+        <rdfs:label xml:lang="en">Horror genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Literary_Genre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Literary_Genre">
+        <rdfs:comment xml:lang="en">Using the term literary genre, we make it clear that we&apos;re talking about books and writing. There are many genres, in this ontology have been reported only a few.</rdfs:comment>
+        <rdfs:label xml:lang="en">Style of writing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Nonfiction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Nonfiction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">We use Nonfiction as the first level of taxonomy of literary genres in according to Wikipedia</rdfs:comment>
+        <rdfs:label xml:lang="en">Content that purports in good faith to represent truth and accuracy regarding information, events, or people.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Tag -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Tag">
+        <rdfs:comment xml:lang="en">Tags can be used to find common points between users, between books or between users and books</rdfs:comment>
+        <rdfs:label xml:lang="en">Characteristics of a user or a book.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Thriller -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#Thriller">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rob#action_thriller"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rob#crime_thriller"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rob#psychological_thriller"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/rob#thriller"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdfs:comment xml:lang="en">Thriller is a genre of fiction, having numerous, often overlapping subgenres. Thrillers are characterized and defined by the moods they elicit, giving viewers heightened feelings of suspense, excitement, surprise, anticipation and anxiety.</rdfs:comment>
+        <rdfs:label xml:lang="en">Thriller genre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/rob#User">
+        <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdfs:comment xml:lang="en">Anyone that use the system is classified as a user. This class includes both readers and writers.</rdfs:comment>
+        <rdfs:label xml:lang="en">Person who uses the system.</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Alice_Fala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Alice_Fala">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:favourite_book rdf:resource="http://www.semanticweb.org/rob#Shining"/>
+        <rob:likes_book rdf:resource="http://www.semanticweb.org/rob#Shining"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Alice_Fala"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="en">Alice Fala</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Davide_Geco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Davide_Geco">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:likes_book rdf:resource="http://www.semanticweb.org/rob#Gone_Girl"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Davide_Geco"/>
+        <rob:user_similar_to rdf:resource="http://www.semanticweb.org/rob#Davide_Geco"/>
+        <rob:user_similar_to rdf:resource="http://www.semanticweb.org/rob#Emanuele_Podio"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="en">Davide Geco</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Elisa_Fragola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Elisa_Fragola">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:likes_book rdf:resource="http://www.semanticweb.org/rob#The_Fellowship_of_the_Ring"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Elisa_Fragola"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="en">Elisa Fragola</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Emanuele_Podio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Emanuele_Podio">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:likes_book rdf:resource="http://www.semanticweb.org/rob#The_Dark_Half"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Emanuele_Podio"/>
+        <rob:user_similar_to rdf:resource="http://www.semanticweb.org/rob#Davide_Geco"/>
+        <rob:user_similar_to rdf:resource="http://www.semanticweb.org/rob#Emanuele_Podio"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="en">Emanuele Podio</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Gone_Girl -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Gone_Girl">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:genre rdf:resource="http://www.semanticweb.org/rob#thriller"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Davide_Geco"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Emanuele_Podio"/>
+        <rdfs:comment xml:lang="en">Gone Girl is a thriller novel in the mystery and crime genres, by the American writer Gillian Flynn.</rdfs:comment>
+        <rdfs:label xml:lang="en">Gone Girl</rdfs:label>
+        <rdfs:label xml:lang="it">L&apos;amore Bugiardo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Harry_Potter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Harry_Potter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Chamber_of_Secrets"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rdfs:comment xml:lang="en">Book serie written by J. K. Rowling</rdfs:comment>
+        <rdfs:label xml:lang="en">Harry Potter</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#J._K._Rowling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#J._K._Rowling">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Famous_Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Chamber_of_Secrets"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rdfs:comment xml:lang="en">Joanne Rowling, better known by her pen name J. K. Rowling, is a British author, film producer, television producer, screenwriter, and philanthropist. She is best known for writing the Harry Potter fantasy series, which has won multiple awards and sold more than 500 million copies, becoming the best-selling book series in history.</rdfs:comment>
+        <rdfs:label xml:lang="en">Joanne Rowling</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#J._R._R._Tolkien -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#J._R._R._Tolkien">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Fellowship_of_the_Ring"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Return_of_the_King"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Two_Towers"/>
+        <rdfs:comment xml:lang="en">John Ronald Reuel Tolkien was an English writer, poet, philologist, and academic, who is best known as the author of the classic high fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion.</rdfs:comment>
+        <rdfs:label xml:lang="en">John Ronald Reuel Tolkien</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Luigi_Verdi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Luigi_Verdi">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:likes_book rdf:resource="http://www.semanticweb.org/rob#The_Red_Pyramid"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Luigi_Verdi"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="it">Luigi Verdi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Mario_Rossi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Mario_Rossi">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:favourite_book rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:likes_book rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Mario_Rossi"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="it">Mario Rossi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Matteo_Peso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Matteo_Peso">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:recommendation rdf:resource="http://www.semanticweb.org/rob#Rec_Matteo_Peso"/>
+        <rob:user_tag rdf:resource="http://www.semanticweb.org/rob#nostalgic"/>
+        <rdfs:comment xml:lang="en">A system user</rdfs:comment>
+        <rdfs:label xml:lang="it">Matteo Peso</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Misery -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Misery">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Alice_Fala"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Stephen_King"/>
+        <rdfs:comment xml:lang="en">Book written by Stephen King</rdfs:comment>
+        <rdfs:label xml:lang="en">Misery</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Alice_Fala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Alice_Fala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#Misery"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#Shining"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Dark_Half"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Outsider"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Running_Man"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Alice_Fala"/>
+        <rdfs:comment xml:lang="en">The recommendation for Alice Fala is the collection of books that system recommended for her.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Alice Fala</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Davide_Geco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Davide_Geco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#Gone_Girl"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Dark_Half"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Davide_Geco"/>
+        <rdfs:comment xml:lang="en">The recommendation for Davide Geco is the collection of books that system recommended for him.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Davide Geco</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Elisa_Fragola -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Elisa_Fragola">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Fellowship_of_the_Ring"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Return_of_the_King"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Two_Towers"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Elisa_Fragola"/>
+        <rdfs:comment xml:lang="en">The recommendation for Elisa Fragola is the collection of books that system recommended for her.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Elisa Fragola</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Emanuele_Podio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Emanuele_Podio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#Gone_Girl"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Dark_Half"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Emanuele_Podio"/>
+        <rdfs:comment xml:lang="en">The recommendation for Emanuele Podio is the collection of books that system recommended for him.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Emanuele Podio</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Luigi_Verdi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Luigi_Verdi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Lightning_Thief"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Luigi_Verdi"/>
+        <rdfs:comment xml:lang="en">The recommendation for Luigi Verdi is the collection of books that system recommended for him.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Luigi Verdi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Mario_Rossi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Mario_Rossi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Chamber_of_Secrets"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:has_member rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Mario_Rossi"/>
+        <rdfs:comment xml:lang="en">The recommendation for Mario Rossi is the collection of books that system recommended for him.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Mario Rossi</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rec_Matteo_Peso -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rec_Matteo_Peso">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+        <rob:recommendation_for rdf:resource="http://www.semanticweb.org/rob#Matteo_Peso"/>
+        <rdfs:comment xml:lang="en">The recommendation for Matteo Peso is the collection of books that system recommended for him.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recommendation for Matteo Peso</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Rick_Riordan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Rick_Riordan">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Lightning_Thief"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Red_Pyramid"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Sea_of_Monsters"/>
+        <rdfs:comment xml:lang="en">Richard Russell Riordan Jr. is an American author. He is known for writing the Percy Jackson &amp; the Olympians series.</rdfs:comment>
+        <rdfs:label xml:lang="en">Richard Russell Riordan Jr.</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Shining -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Shining">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#BestSeller"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Alice_Fala"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Stephen_King"/>
+        <rob:copies_sold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000000</rob:copies_sold>
+        <rdfs:comment xml:lang="en">Book written by Stephen King</rdfs:comment>
+        <rdfs:label xml:lang="it">Shining</rdfs:label>
+        <rdfs:label xml:lang="en">The Shining</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Stephen_King -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Stephen_King">
+        <rdf:type rdf:resource="http://purl.org/dc/terms/Agent"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Famous_Author"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#User"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#Misery"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#Shining"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Dark_Half"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Outsider"/>
+        <rob:wrote rdf:resource="http://www.semanticweb.org/rob#The_Running_Man"/>
+        <rdfs:comment xml:lang="en">An American author of horror, supernatural fiction, suspense, and fantasy novels. His books have sold more than 350 million copies.</rdfs:comment>
+        <rdfs:label xml:lang="en">Stephen Edwin King</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Chamber_of_Secrets -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Chamber_of_Secrets">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#BestSeller"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#Harry_Potter"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Mario_Rossi"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._K._Rowling"/>
+        <rob:copies_sold rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120000000</rob:copies_sold>
+        <rdfs:comment xml:lang="en">It is the second book of Harry Potter, a book series written by J. K. Rowling.</rdfs:comment>
+        <rdfs:label xml:lang="en">Harry Potter: La Camera dei Segreti</rdfs:label>
+        <rdfs:label xml:lang="en">Harry Potter: The Chamber of Secrets</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Dark_Half -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Dark_Half">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:genre rdf:resource="http://www.semanticweb.org/rob#thriller"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Alice_Fala"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Davide_Geco"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Emanuele_Podio"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Stephen_King"/>
+        <rdfs:comment xml:lang="en">Book written by Stephen King</rdfs:comment>
+        <rdfs:label xml:lang="it">La Metà Oscura</rdfs:label>
+        <rdfs:label xml:lang="en">The Dark Half</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Fellowship_of_the_Ring -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Fellowship_of_the_Ring">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#The_Lord_of_the_Rings"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#nostalgic"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#travel"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#war"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Elisa_Fragola"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._R._R._Tolkien"/>
+        <rdfs:comment xml:lang="en">First book of trilogy &quot;The Lord of the Rings&quot;</rdfs:comment>
+        <rdfs:label xml:lang="it">Il Signore degli Anelli - La Compagnia dell&apos;Anello</rdfs:label>
+        <rdfs:label xml:lang="en">The Lord of the Rings - The Fellowship of the Ring</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Goblet_of_Fire -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Goblet_of_Fire">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#Harry_Potter"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Mario_Rossi"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._K._Rowling"/>
+        <rdfs:comment xml:lang="en">It is the fourth book of Harry Potter, a book series written by J. K. Rowling.</rdfs:comment>
+        <rdfs:label xml:lang="it">Harry Potter: Il Calice di Fuoco</rdfs:label>
+        <rdfs:label xml:lang="en">Harry Potter: The Goblet of Fire</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Lightning_Thief -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Lightning_Thief">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#Percy_Jackson_&amp;_the_Olympians"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Luigi_Verdi"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Rick_Riordan"/>
+        <rob:published_in rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-07-01T09:00:00</rob:published_in>
+        <rdfs:comment xml:lang="en">It is the first novel in the Percy Jackson &amp; the Olympians series, a book serie written by Rick Riordan</rdfs:comment>
+        <rdfs:label xml:lang="en">Percy Jackson and the Olympians: The Lightning Thief</rdfs:label>
+        <rdfs:label xml:lang="it">Percy Jackson e gli dei dell&apos;Olimpo: Il Ladro di Fulmini</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Lord_of_the_Rings -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Lord_of_the_Rings">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Fellowship_of_the_Ring"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Return_of_the_King"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Two_Towers"/>
+        <rob:saga_tag rdf:resource="http://www.semanticweb.org/rob#nostalgic"/>
+        <rob:saga_tag rdf:resource="http://www.semanticweb.org/rob#travel"/>
+        <rob:saga_tag rdf:resource="http://www.semanticweb.org/rob#war"/>
+        <rdfs:comment xml:lang="en">Books trilogy written by J. R. R. Tolkien</rdfs:comment>
+        <rdfs:label xml:lang="it">Il Signore degli Anelli</rdfs:label>
+        <rdfs:label xml:lang="en">The Lord of The Rings</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Outsider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Outsider">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:genre rdf:resource="http://www.semanticweb.org/rob#psychological_thriller"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Alice_Fala"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Stephen_King"/>
+        <rdfs:comment xml:lang="en">Book written by Stephen King</rdfs:comment>
+        <rdfs:label xml:lang="en">The Outsider</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#Harry_Potter"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Mario_Rossi"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._K._Rowling"/>
+        <rdfs:comment xml:lang="en">It is the third book of Harry Potter, a book series written by J. K. Rowling.</rdfs:comment>
+        <rdfs:label xml:lang="it">Harry Potter: Il Prigioniero di Askaban</rdfs:label>
+        <rdfs:label xml:lang="en">Harry Potter: The Prisoner of Azkaban</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Red_Pyramid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Red_Pyramid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Lightning_Thief"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Rick_Riordan"/>
+        <rdfs:comment xml:lang="en">It is the first novel in The Kane Chronicles, a book series written by Rick Riordan</rdfs:comment>
+        <rdfs:label xml:lang="it">The Kane Chronicles: La piramide Rossa</rdfs:label>
+        <rdfs:label xml:lang="en">The Kane Chronicles: The Red Pyramid</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Return_of_the_King -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Return_of_the_King">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#The_Lord_of_the_Rings"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#nostalgic"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#travel"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#war"/>
+        <rob:genre rdf:resource="http://www.semanticweb.org/rob#epic_fantasy"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Elisa_Fragola"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._R._R._Tolkien"/>
+        <rdfs:comment xml:lang="en">Third book of trilogy &quot;The Lord of the Rings&quot;</rdfs:comment>
+        <rdfs:label xml:lang="it">Il Signore degli Anelli - Il Ritorno del Re</rdfs:label>
+        <rdfs:label xml:lang="en">The Lord of the Rings - The Return of the King</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Running_Man -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Running_Man">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Alice_Fala"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Stephen_King"/>
+        <rdfs:comment xml:lang="en">Book written by Stephen King</rdfs:comment>
+        <rdfs:label xml:lang="it">L&apos;Uomo in Fuga</rdfs:label>
+        <rdfs:label xml:lang="en">The Running Man</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Sea_of_Monsters -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Sea_of_Monsters">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#Percy_Jackson_&amp;_the_Olympians"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#Rick_Riordan"/>
+        <rdfs:comment xml:lang="en">It is the second novel in the Percy Jackson &amp; the Olympians series, a book serie written by Rick Riordan</rdfs:comment>
+        <rdfs:label xml:lang="en">Percy Jackson and the Olympians: The Sea Monsters</rdfs:label>
+        <rdfs:label xml:lang="it">Percy Jackson e gli Dei dell&apos;Olimpo: Il Mare dei Mostri</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Two_Towers -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Two_Towers">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#The_Lord_of_the_Rings"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#nostalgic"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#travel"/>
+        <rob:book_tag rdf:resource="http://www.semanticweb.org/rob#war"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Elisa_Fragola"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._R._R._Tolkien"/>
+        <rdfs:comment xml:lang="en">Second book of trilogy &quot;The Lord of the Rings&quot;</rdfs:comment>
+        <rdfs:label xml:lang="it">Il Signore degli Anelli: Le Due Torri</rdfs:label>
+        <rdfs:label xml:lang="en">The Lord of The Rings: The Two Towers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#action_thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#action_thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Thriller"/>
+        <rdfs:comment xml:lang="en">Take any other thriller subgenre, give it’s defining elements a back seat, and focus on the action, and you have an action-thriller. This is more common in movies than novels because of the visual appeal of explosions and violence.</rdfs:comment>
+        <rdfs:label xml:lang="en">Action thriller (subgenre of thriller genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#biography -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#biography">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Nonfiction"/>
+        <rdfs:comment xml:lang="en">A narrative of a person&apos;s life</rdfs:comment>
+        <rdfs:label xml:lang="en">Biography (subgenre of nonfiction genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#crime -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#crime">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Crime"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Fiction about a crime, how the criminal gets caught and serve time, and the repercussions of the crime</rdfs:comment>
+        <rdfs:label xml:lang="en">Crime genre (subgenre of fiction genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#crime_thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#crime_thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Crime"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Thriller"/>
+        <rdfs:comment xml:lang="en">In this subgenre of thriller the protagonist must confront a large, powerful organization whose threat only he sees. Usually he must do so alone.</rdfs:comment>
+        <rdfs:label xml:lang="en">Crime thriller (subgenre of thriller and crime genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#detective_fiction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#detective_fiction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Crime"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Detective fiction is a subgenre of crime fiction and mystery fiction in which an investigator or a detective—either professional, amateur or retired—investigates a crime, often murder.</rdfs:comment>
+        <rdfs:label xml:lang="en">Detective fiction (subgenre of crime genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#epic_fantasy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#epic_fantasy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fantasy"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">High fantasy or epic fantasy is a subgenre of fantasy, defined either by the epic nature of its setting or by the epic stature of its characters, themes, or plot.</rdfs:comment>
+        <rdfs:label xml:lang="en">Epic Fantasy (subgenre of fantasy genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#fantasy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#fantasy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fantasy"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Fantasy is a subgenre of fiction genre set in a fictional universe, often inspired by real world myth and folklore.</rdfs:comment>
+        <rdfs:label xml:lang="en">Fantasy genre</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#heroic_fantasy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#heroic_fantasy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fantasy"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Heroic fantasy is a subgenre of fantasy in which events occur in a world where magic is prevalent and modern technology is non-existent.</rdfs:comment>
+        <rdfs:label xml:lang="en">Heroic fantasy (subgenre of fantasy genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#horror -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#horror">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Horror"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Horror is a genre of fiction which is intended to frighten, scare, disgust, or startle its readers by inducing feelings of horror and terror.</rdfs:comment>
+        <rdfs:label xml:lang="en">Horror genre (subgenre of fiction genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#macabre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#macabre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Horror"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">The macabre books to emphasize the details and symbols of death. The term also refers to works particularly gruesome in nature.</rdfs:comment>
+        <rdfs:label xml:lang="en">Macabre genre (subgenre of horror genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#nostalgic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#nostalgic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+        <rdfs:comment xml:lang="en">Feeling, evoking, or characterized by nostalgia.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nostalgic Tag</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#psychological_horror -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#psychological_horror">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Horror"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Psychological horror is a subgenre of horror and psychological fiction that relies on mental, emotional and psychological states to frighten, disturb, or unsettle its audience.</rdfs:comment>
+        <rdfs:label xml:lang="en">Psychological horror (subgenre of horror genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#psychological_thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#psychological_thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Thriller"/>
+        <rdfs:comment xml:lang="en">Psychological thriller is a thriller narrative that emphasizes the unstable or delusional psychological states of its characters.</rdfs:comment>
+        <rdfs:label xml:lang="en">Psychological thriller (subgenre of thriller genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#spy_novel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#spy_novel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Crime"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">The major characters are spies, usually working for an intelligence agency.</rdfs:comment>
+        <rdfs:label xml:lang="en">Spy novel (subgenre of crime genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#thriller -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#thriller">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Thriller"/>
+        <rdfs:comment xml:lang="en">Thriller is a genre of fiction, having numerous, often overlapping subgenres. Thrillers are characterized and defined by the moods they elicit, giving viewers heightened feelings of suspense, excitement, surprise, anticipation and anxiety.</rdfs:comment>
+        <rdfs:label xml:lang="en">Thriller genre (subgenre of fiction genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#travel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#travel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+        <rdfs:comment xml:lang="en">The action of travelling</rdfs:comment>
+        <rdfs:label xml:lang="en">Travel Tag</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#urban_fantasy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#urban_fantasy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fantasy"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Fiction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+        <rdfs:comment xml:lang="en">Urban fantasy is a fantastic genre of English-language fiction, or a subgenre of fantasy, in which the narrative uses supernatural elements in an urban society.</rdfs:comment>
+        <rdfs:label xml:lang="en">Urban fantasy (subgenre of fantasy genre)</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#war -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#war">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+        <rdfs:comment xml:lang="en">A state of armed conflict between different countries or different groups within a country.</rdfs:comment>
+        <rdfs:label xml:lang="en">War Tag</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#Percy_Jackson_&amp;_the_Olympians -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#Percy_Jackson_&amp;_the_Olympians">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Lightning_Thief"/>
+        <rob:has_book rdf:resource="http://www.semanticweb.org/rob#The_Sea_of_Monsters"/>
+        <rdfs:comment xml:lang="en">Book serie written by Rick Riordan</rdfs:comment>
+        <rdfs:label xml:lang="en">Percy Jackson &amp; the Olympians</rdfs:label>
+        <rdfs:label xml:lang="it">Percy Jackson e gli dei dell&apos;Olimpo</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/rob#Book"/>
+        <rob:belongs_saga rdf:resource="http://www.semanticweb.org/rob#Harry_Potter"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+        <rob:book_similar_to rdf:resource="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        <rob:is_member_of rdf:resource="http://www.semanticweb.org/rob#Rec_Mario_Rossi"/>
+        <rob:was_written_by rdf:resource="http://www.semanticweb.org/rob#J._K._Rowling"/>
+        <rdfs:comment xml:lang="en">It is the first book of Harry Potter, a book series written by J. K. Rowling.</rdfs:comment>
+        <rdfs:label xml:lang="it">Harry Potter: La Pietra Filosofale</rdfs:label>
+        <rdfs:label xml:lang="en">Harry Potter: The Philosopher&apos;s Stone</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Davide_Geco"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Emanuele_Podio"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Emanuele_Podio"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#J._K._Rowling"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Luigi_Verdi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Mario_Rossi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Rick_Riordan"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Gone_Girl"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Misery"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Shining"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Chamber_of_Secrets"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Dark_Half"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Goblet_of_Fire"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Lightning_Thief"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Outsider"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Prisoner_of_Azkaban"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Red_Pyramid"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Running_Man"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Sea_of_Monsters"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#The_Philosopher&apos;s_Stone"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#J._K._Rowling"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Mario_Rossi"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Luigi_Verdi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Mario_Rossi"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Mario_Rossi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Rick_Riordan"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Rec_Davide_Geco"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/rob#Rec_Emanuele_Podio"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#u">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#a">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#b2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#r">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#g">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#s">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#t">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#u1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#u2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#r1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#r2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/book-recommendation#b1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rob#b">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.semanticweb.org/rob#c">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a saga has associated a Tag, then all the books of the saga will be associated withe the specific Tag</rdfs:comment>
+        <rdfs:label>From saga_tag to book_tag</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#s"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#saga_tag"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#s"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#t"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#belongs_saga"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#s"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Tag"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#t"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#book_tag"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#t"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a user U1 likes a book B1, a user U2 likes a book L2 and U1 is similar to U2, then the book L1 is added to the user U2 recommendations and the book L2 is added to the user U1 recommendations</rdfs:comment>
+        <rdfs:label>Similar users recommend the books they liked</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#user_similar_to"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#u2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#recommendation"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#r1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#recommendation"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u2"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#r2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#User"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b1"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r1"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#User"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u2"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                        <rdf:first>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#likes_book"/>
+                                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b1"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                                <rdf:first>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#likes_book"/>
+                                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u2"/>
+                                                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:first>
+                                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_member"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_member"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r2"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a user likes book1 and book1 is similar to book2, then book2 is recommended to user.</rdfs:comment>
+        <rdfs:label>Similar Books to each other</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#recommendation"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#r1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#book_similar_to"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b1"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#User"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b1"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r1"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#likes_book"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u1"/>
+                                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b1"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_member"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r1"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>A book B is a bestseller if it sold at least 10000 copies</rdfs:comment>
+        <rdfs:label>BestSeller</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#copies_sold"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rob#b"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/rob#c"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#BuiltinAtom"/>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#greaterThan"/>
+                                <swrl:arguments>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first rdf:resource="http://www.semanticweb.org/rob#c"/>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10000</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </swrl:arguments>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rob#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#BestSeller"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/rob#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a user U1&apos;s favorite book is L1 and A1 is the author of the book L1, then all books written by A1 will be added to the user U1 recommendations.</rdfs:comment>
+        <rdfs:label>Recommend the books of the author of the favorite book</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#User"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#wrote"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#a"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#wrote"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#a"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#favourite_book"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#recommendation"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Author"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#a"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_member"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a user U likes genre G, then all the best sellers whose genre is G are added to recommendations for user U</rdfs:comment>
+        <rdfs:label>Recommendation of the best sellers of the genres liked</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#User"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#genre"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#g"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#likes_genre"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#g"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#BestSeller"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Literary_Genre"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#g"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#recommendation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_member"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment>If a user U likes a book B and it belongs to a saga S; the system recommends all the books of S to U</rdfs:comment>
+        <rdfs:label>Reccomendation Books_Saga</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_book"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#s"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#User"/>
+                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_book"/>
+                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#s"/>
+                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book_Serie"/>
+                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#s"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#recommendation"/>
+                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                                                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                        <rdf:first>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Books_Recommendation"/>
+                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                                                            </rdf:Description>
+                                                        </rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                <rdf:first>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                                                                    </rdf:Description>
+                                                                </rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                        <rdf:first>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#likes_book"/>
+                                                                                <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#u"/>
+                                                                                <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                                                <rdf:first>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                                                                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/rob#Book"/>
+                                                                                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#b"/>
+                                                                                    </rdf:Description>
+                                                                                </rdf:first>
+                                                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/rob#has_member"/>
+                        <swrl:argument1 rdf:resource="http://www.semanticweb.org/book-recommendation#r"/>
+                        <swrl:argument2 rdf:resource="http://www.semanticweb.org/book-recommendation#b2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
