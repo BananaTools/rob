@@ -1,0 +1,2162 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/rob"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/rob">
+    <Prefix name="" IRI="http://www.semanticweb.org/rob"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="rob" IRI="http://www.semanticweb.org/rob#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="collectionentity" IRI="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#"/>
+    <Import>http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl</Import>
+    <Declaration>
+        <Class IRI="http://purl.org/dc/terms/Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BestSeller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Book"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Book_Serie"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Books_Recommendation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Crime"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Famous_Author"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fantasy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fiction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Horror"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Literary_Genre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nonfiction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tag"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Thriller"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#book_similar_to"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#book_tag"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#favourite_book"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#favourite_genre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#genre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#likes_book"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#likes_genre"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#recommendation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#recommendation_for"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#saga_tag"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#user_similar_to"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#user_tag"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#was_written_by"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wrote"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#copies_sold"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#published_in"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Alice_Fala"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Davide_Geco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Elisa_Fragola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Gone_Girl"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#J._R._R._Tolkien"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Luigi_Verdi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Matteo_Peso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Misery"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Alice_Fala"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Davide_Geco"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Elisa_Fragola"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Emanuele_Podio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Luigi_Verdi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Mario_Rossi"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rec_Matteo_Peso"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Shining"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Stephen_King"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Chamber_of_Secrets"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Dark_Half"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Fellowship_of_the_Ring"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Lightning_Thief"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Outsider"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Prisoner_of_Azkaban"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Red_Pyramid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Return_of_the_King"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Running_Man"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Sea_of_Monsters"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Two_Towers"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#action_thriller"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#autobiography"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#biography"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#crime"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#crime_thriller"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#detective_fiction"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#epic_fantasy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#fantasy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#heroic_fantasy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#horror"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#macabre"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#nostalgic"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#psychological_horror"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#psychological_thriller"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#spy_novel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#thriller"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#travel"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#urban_fantasy"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#war"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Percy_Jackson_&amp;_the_Olympians"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#The_Philosopher&apos;s_Stone"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Author"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#wrote"/>
+            <Class IRI="#Book"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Famous_Author"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#wrote"/>
+            <Class IRI="#BestSeller"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Thriller"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#action_thriller"/>
+            <NamedIndividual IRI="#crime_thriller"/>
+            <NamedIndividual IRI="#psychological_thriller"/>
+            <NamedIndividual IRI="#thriller"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Author"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BestSeller"/>
+        <Class IRI="#Book"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Book_Serie"/>
+        <Class abbreviatedIRI="collectionentity:Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Books_Recommendation"/>
+        <Class abbreviatedIRI="collectionentity:Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Crime"/>
+        <Class IRI="#Fiction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Famous_Author"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fantasy"/>
+        <Class IRI="#Fiction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fiction"/>
+        <Class IRI="#Literary_Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Horror"/>
+        <Class IRI="#Fiction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nonfiction"/>
+        <Class IRI="#Literary_Genre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Thriller"/>
+        <Class IRI="#Fiction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <Class IRI="http://purl.org/dc/terms/Agent"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Davide_Geco"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Book_Serie"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Author"/>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#J._R._R._Tolkien"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Luigi_Verdi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Books_Recommendation"/>
+        <NamedIndividual IRI="#Rec_Emanuele_Podio"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Books_Recommendation"/>
+        <NamedIndividual IRI="#Rec_Luigi_Verdi"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#User"/>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Book"/>
+        <NamedIndividual IRI="#The_Dark_Half"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nonfiction"/>
+        <NamedIndividual IRI="#autobiography"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Nonfiction"/>
+        <NamedIndividual IRI="#biography"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Crime"/>
+        <NamedIndividual IRI="#crime"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Crime"/>
+        <NamedIndividual IRI="#crime_thriller"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Crime"/>
+        <NamedIndividual IRI="#detective_fiction"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fantasy"/>
+        <NamedIndividual IRI="#epic_fantasy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fantasy"/>
+        <NamedIndividual IRI="#fantasy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fantasy"/>
+        <NamedIndividual IRI="#heroic_fantasy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Horror"/>
+        <NamedIndividual IRI="#horror"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Horror"/>
+        <NamedIndividual IRI="#macabre"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Horror"/>
+        <NamedIndividual IRI="#psychological_horror"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Crime"/>
+        <NamedIndividual IRI="#spy_novel"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Fantasy"/>
+        <NamedIndividual IRI="#urban_fantasy"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Book_Serie"/>
+        <NamedIndividual IRI="#Percy_Jackson_&amp;_the_Olympians"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Davide_Geco"/>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+        <NamedIndividual IRI="#Luigi_Verdi"/>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Gone_Girl"/>
+        <NamedIndividual IRI="#Misery"/>
+        <NamedIndividual IRI="#Shining"/>
+        <NamedIndividual IRI="#The_Chamber_of_Secrets"/>
+        <NamedIndividual IRI="#The_Dark_Half"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+        <NamedIndividual IRI="#The_Lightning_Thief"/>
+        <NamedIndividual IRI="#The_Outsider"/>
+        <NamedIndividual IRI="#The_Prisoner_of_Azkaban"/>
+        <NamedIndividual IRI="#The_Red_Pyramid"/>
+        <NamedIndividual IRI="#The_Running_Man"/>
+        <NamedIndividual IRI="#The_Sea_of_Monsters"/>
+        <NamedIndividual IRI="#The_Philosopher&apos;s_Stone"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Luigi_Verdi"/>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#Rec_Davide_Geco"/>
+        <NamedIndividual IRI="#Rec_Emanuele_Podio"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#The_Fellowship_of_the_Ring"/>
+        <NamedIndividual IRI="#The_Return_of_the_King"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#The_Fellowship_of_the_Ring"/>
+        <NamedIndividual IRI="#The_Two_Towers"/>
+    </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#The_Return_of_the_King"/>
+        <NamedIndividual IRI="#The_Two_Towers"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#favourite_book"/>
+        <NamedIndividual IRI="#Alice_Fala"/>
+        <NamedIndividual IRI="#Shining"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likes_book"/>
+        <NamedIndividual IRI="#Davide_Geco"/>
+        <NamedIndividual IRI="#Gone_Girl"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#user_similar_to"/>
+        <NamedIndividual IRI="#Davide_Geco"/>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likes_book"/>
+        <NamedIndividual IRI="#Elisa_Fragola"/>
+        <NamedIndividual IRI="#The_Fellowship_of_the_Ring"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likes_book"/>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+        <NamedIndividual IRI="#The_Dark_Half"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#user_similar_to"/>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+        <NamedIndividual IRI="#Davide_Geco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#genre"/>
+        <NamedIndividual IRI="#Gone_Girl"/>
+        <NamedIndividual IRI="#thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+        <NamedIndividual IRI="#The_Chamber_of_Secrets"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+        <NamedIndividual IRI="#The_Prisoner_of_Azkaban"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+        <NamedIndividual IRI="#The_Philosopher&apos;s_Stone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wrote"/>
+        <NamedIndividual IRI="#J._R._R._Tolkien"/>
+        <NamedIndividual IRI="#The_Fellowship_of_the_Ring"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wrote"/>
+        <NamedIndividual IRI="#J._R._R._Tolkien"/>
+        <NamedIndividual IRI="#The_Return_of_the_King"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wrote"/>
+        <NamedIndividual IRI="#J._R._R._Tolkien"/>
+        <NamedIndividual IRI="#The_Two_Towers"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likes_book"/>
+        <NamedIndividual IRI="#Luigi_Verdi"/>
+        <NamedIndividual IRI="#The_Red_Pyramid"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#favourite_book"/>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#likes_genre"/>
+        <NamedIndividual IRI="#Matteo_Peso"/>
+        <NamedIndividual IRI="#horror"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#user_tag"/>
+        <NamedIndividual IRI="#Matteo_Peso"/>
+        <NamedIndividual IRI="#nostalgic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#Misery"/>
+        <NamedIndividual IRI="#Stephen_King"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Alice_Fala"/>
+        <NamedIndividual IRI="#Alice_Fala"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Davide_Geco"/>
+        <NamedIndividual IRI="#Davide_Geco"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Elisa_Fragola"/>
+        <NamedIndividual IRI="#Elisa_Fragola"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Emanuele_Podio"/>
+        <NamedIndividual IRI="#Emanuele_Podio"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Luigi_Verdi"/>
+        <NamedIndividual IRI="#Luigi_Verdi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Mario_Rossi"/>
+        <NamedIndividual IRI="#Mario_Rossi"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <NamedIndividual IRI="#Rec_Matteo_Peso"/>
+        <NamedIndividual IRI="#Matteo_Peso"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wrote"/>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+        <NamedIndividual IRI="#The_Lightning_Thief"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wrote"/>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+        <NamedIndividual IRI="#The_Sea_of_Monsters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#genre"/>
+        <NamedIndividual IRI="#Shining"/>
+        <NamedIndividual IRI="#horror"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#Shining"/>
+        <NamedIndividual IRI="#Stephen_King"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#wrote"/>
+        <NamedIndividual IRI="#Stephen_King"/>
+        <NamedIndividual IRI="#The_Dark_Half"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <NamedIndividual IRI="#The_Chamber_of_Secrets"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Chamber_of_Secrets"/>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#genre"/>
+        <NamedIndividual IRI="#The_Dark_Half"/>
+        <NamedIndividual IRI="#thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:isMemberOf"/>
+        <NamedIndividual IRI="#The_Fellowship_of_the_Ring"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+        <NamedIndividual IRI="#The_Philosopher&apos;s_Stone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#saga_tag"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+        <NamedIndividual IRI="#nostalgic"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#saga_tag"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+        <NamedIndividual IRI="#travel"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#saga_tag"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+        <NamedIndividual IRI="#war"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#genre"/>
+        <NamedIndividual IRI="#The_Outsider"/>
+        <NamedIndividual IRI="#psychological_thriller"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Outsider"/>
+        <NamedIndividual IRI="#Stephen_King"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <NamedIndividual IRI="#The_Prisoner_of_Azkaban"/>
+        <NamedIndividual IRI="#The_Goblet_of_Fire"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Prisoner_of_Azkaban"/>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <NamedIndividual IRI="#The_Red_Pyramid"/>
+        <NamedIndividual IRI="#The_Lightning_Thief"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Red_Pyramid"/>
+        <NamedIndividual IRI="#Rick_Riordan"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:isMemberOf"/>
+        <NamedIndividual IRI="#The_Return_of_the_King"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#genre"/>
+        <NamedIndividual IRI="#The_Return_of_the_King"/>
+        <NamedIndividual IRI="#epic_fantasy"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Running_Man"/>
+        <NamedIndividual IRI="#Stephen_King"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:isMemberOf"/>
+        <NamedIndividual IRI="#The_Two_Towers"/>
+        <NamedIndividual IRI="#The_Lord_of_the_Rings"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+        <NamedIndividual IRI="#Percy_Jackson_&amp;_the_Olympians"/>
+        <NamedIndividual IRI="#The_Lightning_Thief"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+        <NamedIndividual IRI="#Percy_Jackson_&amp;_the_Olympians"/>
+        <NamedIndividual IRI="#The_Sea_of_Monsters"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <NamedIndividual IRI="#The_Philosopher&apos;s_Stone"/>
+        <NamedIndividual IRI="#The_Prisoner_of_Azkaban"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#was_written_by"/>
+        <NamedIndividual IRI="#The_Philosopher&apos;s_Stone"/>
+        <NamedIndividual IRI="#J._K._Rowling"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#copies_sold"/>
+        <NamedIndividual IRI="#Shining"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">1000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#copies_sold"/>
+        <NamedIndividual IRI="#The_Chamber_of_Secrets"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">120000000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#published_in"/>
+        <NamedIndividual IRI="#The_Lightning_Thief"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#dateTime">2005-07-01T09:00:00</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#book_tag"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#favourite_book"/>
+        <ObjectProperty IRI="#likes_book"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#favourite_genre"/>
+        <ObjectProperty IRI="#likes_genre"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#saga_tag"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#user_similar_to"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#recommendation"/>
+        <ObjectProperty IRI="#recommendation_for"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#was_written_by"/>
+        <ObjectProperty IRI="#wrote"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#favourite_book"/>
+    </FunctionalObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#book_similar_to"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#user_similar_to"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#book_tag"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#favourite_book"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#favourite_genre"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#genre"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#likes_book"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#likes_genre"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#recommendation"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <Class IRI="#Books_Recommendation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#saga_tag"/>
+        <Class IRI="#Book_Serie"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#user_similar_to"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#user_tag"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#wrote"/>
+        <Class IRI="#Author"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#book_similar_to"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#book_tag"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#favourite_book"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#favourite_genre"/>
+        <Class IRI="#Literary_Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#genre"/>
+        <Class IRI="#Literary_Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#likes_book"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#likes_genre"/>
+        <Class IRI="#Literary_Genre"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#recommendation"/>
+        <Class IRI="#Books_Recommendation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#recommendation_for"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#saga_tag"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#user_similar_to"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#user_tag"/>
+        <Class IRI="#Tag"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#wrote"/>
+        <Class IRI="#Book"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#favourite_book"/>
+            <ObjectProperty IRI="#genre"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#favourite_genre"/>
+    </SubObjectPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#copies_sold"/>
+        <Class IRI="#Book"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#published_in"/>
+        <Class IRI="#Book"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#copies_sold"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#published_in"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>If a user U has a favourite book FB and A is the author of FB, then all books written by A will be added to the user U recommendations.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Recommend the books of the author of the favorite book</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#recommendation"/>
+                <Variable IRI="#u"/>
+                <Variable IRI="#r"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#b"/>
+                <Variable IRI="#b2"/>
+            </DifferentIndividualsAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Author"/>
+                <Variable IRI="#a"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b2"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="#u"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#favourite_book"/>
+                <Variable IRI="#u"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Books_Recommendation"/>
+                <Variable IRI="#r"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#wrote"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#wrote"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#r"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>If a user U likes genre G, then all the best sellers whose genre is G are added to recommendations for user U</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Recommendation of the best sellers of the genres liked</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Literary_Genre"/>
+                <Variable IRI="#g"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#likes_genre"/>
+                <Variable IRI="#u"/>
+                <Variable IRI="#g"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#BestSeller"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#recommendation"/>
+                <Variable IRI="#u"/>
+                <Variable IRI="#r"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="#u"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#genre"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#g"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Books_Recommendation"/>
+                <Variable IRI="#r"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#r"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>If a saga S has associated a Tag T, then all the books of the saga S will be associated withe the Tag T</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>From saga_tag to book_tag</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Book_Serie"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Tag"/>
+                <Variable IRI="#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:isMemberOf"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#saga_tag"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#t"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#book_tag"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#t"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>If a user U likes a book B and it belongs to a saga S; the system recommends all the books of S to U</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Reccomendation Books_Saga</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Book_Serie"/>
+                <Variable IRI="#s"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="#u"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#b"/>
+                <Variable IRI="#b2"/>
+            </DifferentIndividualsAtom>
+            <ClassAtom>
+                <Class IRI="#Books_Recommendation"/>
+                <Variable IRI="#r"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#likes_book"/>
+                <Variable IRI="#u"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b2"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#s"/>
+                <Variable IRI="#b"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#recommendation"/>
+                <Variable IRI="#u"/>
+                <Variable IRI="#r"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#r"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>A book B is a bestseller if it sold at least 10000 copies</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>BestSeller</Literal>
+        </Annotation>
+        <Body>
+            <DataPropertyAtom>
+                <DataProperty IRI="#copies_sold"/>
+                <Variable IRI="#b"/>
+                <Variable IRI="#c"/>
+            </DataPropertyAtom>
+            <BuiltInAtom IRI="http://www.w3.org/2003/11/swrlb#greaterThan">
+                <Variable IRI="#c"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">10000</Literal>
+            </BuiltInAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#BestSeller"/>
+                <Variable IRI="#b"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>If a user U1 likes book B1, a user U2 likes book B2 and U1 is similar to U2, then the book B1 is added to the user U2 recommendations and the book B2 is added to the user U1 recommendations.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Similar users recommend the books they liked</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="#u2"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#likes_book"/>
+                <Variable IRI="#u1"/>
+                <Variable IRI="#b1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#likes_book"/>
+                <Variable IRI="#u2"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#recommendation"/>
+                <Variable IRI="#u1"/>
+                <Variable IRI="#r1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#recommendation"/>
+                <Variable IRI="#u2"/>
+                <Variable IRI="#r2"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#user_similar_to"/>
+                <Variable IRI="#u1"/>
+                <Variable IRI="#u2"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="#u1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b2"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Books_Recommendation"/>
+                <Variable IRI="#r1"/>
+            </ClassAtom>
+            <DifferentIndividualsAtom>
+                <Variable IRI="#u1"/>
+                <Variable IRI="#u2"/>
+            </DifferentIndividualsAtom>
+            <ClassAtom>
+                <Class IRI="#Books_Recommendation"/>
+                <Variable IRI="#r2"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#r2"/>
+                <Variable IRI="#b1"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#r1"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>If a user U likes book B1 and book B2 is similar to B1, then B2 is recommended to user U.</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>Recommendation of similar books</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#book_similar_to"/>
+                <Variable IRI="#b1"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Books_Recommendation"/>
+                <Variable IRI="#r1"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#likes_book"/>
+                <Variable IRI="#u1"/>
+                <Variable IRI="#b1"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#User"/>
+                <Variable IRI="#u1"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b2"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#recommendation"/>
+                <Variable IRI="#u1"/>
+                <Variable IRI="#r1"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Book"/>
+                <Variable IRI="#b1"/>
+            </ClassAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty abbreviatedIRI="collectionentity:hasMember"/>
+                <Variable IRI="#r1"/>
+                <Variable IRI="#b2"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Alice_Fala</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Alice_Fala</IRI>
+        <Literal xml:lang="en">Alice Fala</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Author</IRI>
+        <Literal xml:lang="en">Subclass of User with comprises anyone who has written a book. In any case there may also be recommendations for authors, because the recommendations are for all the users, not only for the readers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Author</IRI>
+        <Literal xml:lang="en">A writer of a book.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BestSeller</IRI>
+        <Literal xml:lang="en">In this ontology we have done a semplification, we have assumed that book is a bestseller if it sold at least 10.000 copies this in order to not implement the question of time.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#BestSeller</IRI>
+        <Literal xml:lang="en">A new book or other product that has sold a great number of copies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Book</IRI>
+        <Literal xml:lang="en">The focus of this ontology is the book, in fact he is the subject of a reccomendation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Book</IRI>
+        <Literal xml:lang="en">A written or printed work</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Book_Serie</IRI>
+        <Literal xml:lang="en">Collection of books  that are formally identified together as a group. This in according to the pattern Submissions:CollectionEntity. If there are 2 books in a series it&apos;s called Duology, with 3 books it&apos;s called Trilogy and so on.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Book_Serie</IRI>
+        <Literal xml:lang="en">Sequence of books having certain characteristics in common.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Books_Recommendation</IRI>
+        <Literal xml:lang="en">A recommendation of books for a specific system user. In particulary a recommendation is a collection of books according to the pattern Submissions:CollectionEntity. The is one recommendation for each user of the system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Books_Recommendation</IRI>
+        <Literal xml:lang="en">A recommendation of a books for a specific user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Crime</IRI>
+        <Literal xml:lang="en">Fiction about a crime, how the criminal gets caught and serve time, and the repercussions of the crime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Crime</IRI>
+        <Literal xml:lang="en">Crime genre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Davide_Geco</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Davide_Geco</IRI>
+        <Literal xml:lang="en">Davide Geco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Elisa_Fragola</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Elisa_Fragola</IRI>
+        <Literal xml:lang="en">Elisa Fragola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Emanuele_Podio</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Emanuele_Podio</IRI>
+        <Literal xml:lang="en">Emanuele Podio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Famous_Author</IRI>
+        <Literal xml:lang="en">The class is inferred by a swrl rule that checks is an author wrote a bestseller.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Famous_Author</IRI>
+        <Literal xml:lang="en">Who wrote a Bestseller.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fantasy</IRI>
+        <Literal xml:lang="en">Fantasy is a genre of speculative fiction set in a fictional universe, often inspired by real world myth and folklore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Fantasy</IRI>
+        <Literal xml:lang="en">Fantasy genre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Fiction</IRI>
+        <Literal xml:lang="en">We use Fiction as the first level of taxonomy of literary genres in according to Wikipedia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Fiction</IRI>
+        <Literal xml:lang="en">Narrative form not based strictly on history or fact.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Gone_Girl</IRI>
+        <Literal xml:lang="en">Gone Girl is a thriller novel in the mystery and crime genres, by the American writer Gillian Flynn.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Gone_Girl</IRI>
+        <Literal xml:lang="en">Gone Girl</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Gone_Girl</IRI>
+        <Literal xml:lang="it">L&apos;amore Bugiardo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Harry_Potter</IRI>
+        <Literal xml:lang="en">Book serie written by J. K. Rowling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Harry_Potter</IRI>
+        <Literal xml:lang="en">Harry Potter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Horror</IRI>
+        <Literal xml:lang="en">Horror is a genre of speculative fiction which is intended to frighten, scare, disgust, or startle its readers by inducing feelings of horror and terror.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Horror</IRI>
+        <Literal xml:lang="en">Horror genre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#J._K._Rowling</IRI>
+        <Literal xml:lang="en">Joanne Rowling, better known by her pen name J. K. Rowling, is a British author, film producer, television producer, screenwriter, and philanthropist. She is best known for writing the Harry Potter fantasy series, which has won multiple awards and sold more than 500 million copies, becoming the best-selling book series in history.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#J._K._Rowling</IRI>
+        <Literal xml:lang="en">Joanne Rowling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#J._R._R._Tolkien</IRI>
+        <Literal xml:lang="en">John Ronald Reuel Tolkien was an English writer, poet, philologist, and academic, who is best known as the author of the classic high fantasy works The Hobbit, The Lord of the Rings, and The Silmarillion.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#J._R._R._Tolkien</IRI>
+        <Literal xml:lang="en">John Ronald Reuel Tolkien</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Literary_Genre</IRI>
+        <Literal xml:lang="en">Using the term literary genre, we make it clear that we&apos;re talking about books and writing. There are many genres, in this ontology have been reported only a few.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Literary_Genre</IRI>
+        <Literal xml:lang="en">Style of writing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Luigi_Verdi</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Luigi_Verdi</IRI>
+        <Literal xml:lang="it">Luigi Verdi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Mario_Rossi</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Mario_Rossi</IRI>
+        <Literal xml:lang="it">Mario Rossi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Matteo_Peso</IRI>
+        <Literal xml:lang="en">A system user</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Matteo_Peso</IRI>
+        <Literal xml:lang="it">Matteo Peso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Misery</IRI>
+        <Literal xml:lang="en">Book written by Stephen King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Misery</IRI>
+        <Literal xml:lang="en">Misery</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nonfiction</IRI>
+        <Literal xml:lang="en">We use Nonfiction as the first level of taxonomy of literary genres in according to Wikipedia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Nonfiction</IRI>
+        <Literal xml:lang="en">Content that purports in good faith to represent truth and accuracy regarding information, events, or people.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Alice_Fala</IRI>
+        <Literal xml:lang="en">The recommendation for Alice Fala is the collection of books that system recommended for her.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Alice_Fala</IRI>
+        <Literal xml:lang="en">Recommendation for Alice Fala</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Davide_Geco</IRI>
+        <Literal xml:lang="en">The recommendation for Davide Geco is the collection of books that system recommended for him.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Davide_Geco</IRI>
+        <Literal xml:lang="en">Recommendation for Davide Geco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Elisa_Fragola</IRI>
+        <Literal xml:lang="en">The recommendation for Elisa Fragola is the collection of books that system recommended for her.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Elisa_Fragola</IRI>
+        <Literal xml:lang="en">Recommendation for Elisa Fragola</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Emanuele_Podio</IRI>
+        <Literal xml:lang="en">The recommendation for Emanuele Podio is the collection of books that system recommended for him.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Emanuele_Podio</IRI>
+        <Literal xml:lang="en">Recommendation for Emanuele Podio</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Luigi_Verdi</IRI>
+        <Literal xml:lang="en">The recommendation for Luigi Verdi is the collection of books that system recommended for him.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Luigi_Verdi</IRI>
+        <Literal xml:lang="en">Recommendation for Luigi Verdi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Mario_Rossi</IRI>
+        <Literal xml:lang="en">The recommendation for Mario Rossi is the collection of books that system recommended for him.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Mario_Rossi</IRI>
+        <Literal xml:lang="en">Recommendation for Mario Rossi</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rec_Matteo_Peso</IRI>
+        <Literal xml:lang="en">The recommendation for Matteo Peso is the collection of books that system recommended for him.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rec_Matteo_Peso</IRI>
+        <Literal xml:lang="en">Recommendation for Matteo Peso</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Rick_Riordan</IRI>
+        <Literal xml:lang="en">Richard Russell Riordan Jr. is an American author. He is known for writing the Percy Jackson &amp; the Olympians series.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Rick_Riordan</IRI>
+        <Literal xml:lang="en">Richard Russell Riordan Jr.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Shining</IRI>
+        <Literal xml:lang="en">Book written by Stephen King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Shining</IRI>
+        <Literal xml:lang="it">Shining</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Shining</IRI>
+        <Literal xml:lang="en">The Shining</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stephen_King</IRI>
+        <Literal xml:lang="en">An American author of horror, supernatural fiction, suspense, and fantasy novels. His books have sold more than 350 million copies.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Stephen_King</IRI>
+        <Literal xml:lang="en">Stephen Edwin King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tag</IRI>
+        <Literal xml:lang="en">Tags can be used to find common points between users, between books or between users and books</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tag</IRI>
+        <Literal xml:lang="en">Characteristics of a user or a book.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Chamber_of_Secrets</IRI>
+        <Literal xml:lang="en">It is the second book of Harry Potter, a book series written by J. K. Rowling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Chamber_of_Secrets</IRI>
+        <Literal xml:lang="en">Harry Potter: La Camera dei Segreti</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Chamber_of_Secrets</IRI>
+        <Literal xml:lang="en">Harry Potter: The Chamber of Secrets</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Dark_Half</IRI>
+        <Literal xml:lang="en">Book written by Stephen King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Dark_Half</IRI>
+        <Literal xml:lang="it">La Metà Oscura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Dark_Half</IRI>
+        <Literal xml:lang="en">The Dark Half</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Fellowship_of_the_Ring</IRI>
+        <Literal xml:lang="en">First book of trilogy &quot;The Lord of the Rings&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Fellowship_of_the_Ring</IRI>
+        <Literal xml:lang="it">Il Signore degli Anelli - La Compagnia dell&apos;Anello</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Fellowship_of_the_Ring</IRI>
+        <Literal xml:lang="en">The Lord of the Rings - The Fellowship of the Ring</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Goblet_of_Fire</IRI>
+        <Literal xml:lang="en">It is the fourth book of Harry Potter, a book series written by J. K. Rowling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Goblet_of_Fire</IRI>
+        <Literal xml:lang="it">Harry Potter: Il Calice di Fuoco</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Goblet_of_Fire</IRI>
+        <Literal xml:lang="en">Harry Potter: The Goblet of Fire</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Lightning_Thief</IRI>
+        <Literal xml:lang="en">It is the first novel in the Percy Jackson &amp; the Olympians series, a book serie written by Rick Riordan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Lightning_Thief</IRI>
+        <Literal xml:lang="en">Percy Jackson and the Olympians: The Lightning Thief</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Lightning_Thief</IRI>
+        <Literal xml:lang="it">Percy Jackson e gli dei dell&apos;Olimpo: Il Ladro di Fulmini</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Lord_of_the_Rings</IRI>
+        <Literal xml:lang="en">Books trilogy written by J. R. R. Tolkien</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Lord_of_the_Rings</IRI>
+        <Literal xml:lang="it">Il Signore degli Anelli</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Lord_of_the_Rings</IRI>
+        <Literal xml:lang="en">The Lord of The Rings</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Outsider</IRI>
+        <Literal xml:lang="en">Book written by Stephen King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Outsider</IRI>
+        <Literal xml:lang="en">The Outsider</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Prisoner_of_Azkaban</IRI>
+        <Literal xml:lang="en">It is the third book of Harry Potter, a book series written by J. K. Rowling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Prisoner_of_Azkaban</IRI>
+        <Literal xml:lang="it">Harry Potter: Il Prigioniero di Askaban</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Prisoner_of_Azkaban</IRI>
+        <Literal xml:lang="en">Harry Potter: The Prisoner of Azkaban</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Red_Pyramid</IRI>
+        <Literal xml:lang="en">It is the first novel in The Kane Chronicles, a book series written by Rick Riordan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Red_Pyramid</IRI>
+        <Literal xml:lang="it">The Kane Chronicles: La piramide Rossa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Red_Pyramid</IRI>
+        <Literal xml:lang="en">The Kane Chronicles: The Red Pyramid</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Return_of_the_King</IRI>
+        <Literal xml:lang="en">Third book of trilogy &quot;The Lord of the Rings&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Return_of_the_King</IRI>
+        <Literal xml:lang="it">Il Signore degli Anelli - Il Ritorno del Re</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Return_of_the_King</IRI>
+        <Literal xml:lang="en">The Lord of the Rings - The Return of the King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Running_Man</IRI>
+        <Literal xml:lang="en">Book written by Stephen King</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Running_Man</IRI>
+        <Literal xml:lang="it">L&apos;Uomo in Fuga</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Running_Man</IRI>
+        <Literal xml:lang="en">The Running Man</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Sea_of_Monsters</IRI>
+        <Literal xml:lang="en">It is the second novel in the Percy Jackson &amp; the Olympians series, a book serie written by Rick Riordan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Sea_of_Monsters</IRI>
+        <Literal xml:lang="en">Percy Jackson and the Olympians: The Sea Monsters</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Sea_of_Monsters</IRI>
+        <Literal xml:lang="it">Percy Jackson e gli Dei dell&apos;Olimpo: Il Mare dei Mostri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Two_Towers</IRI>
+        <Literal xml:lang="en">Second book of trilogy &quot;The Lord of the Rings&quot;</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Two_Towers</IRI>
+        <Literal xml:lang="it">Il Signore degli Anelli: Le Due Torri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Two_Towers</IRI>
+        <Literal xml:lang="en">The Lord of The Rings: The Two Towers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Thriller</IRI>
+        <Literal xml:lang="en">Thriller is a genre of fiction, having numerous, often overlapping subgenres. Thrillers are characterized and defined by the moods they elicit, giving viewers heightened feelings of suspense, excitement, surprise, anticipation and anxiety.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Thriller</IRI>
+        <Literal xml:lang="en">Thriller genre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User</IRI>
+        <Literal xml:lang="en">Anyone that use the system is classified as a user. This class includes both readers and writers.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#User</IRI>
+        <Literal xml:lang="en">Person who uses the system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#action_thriller</IRI>
+        <Literal xml:lang="en">Take any other thriller subgenre, give it’s defining elements a back seat, and focus on the action, and you have an action-thriller. This is more common in movies than novels because of the visual appeal of explosions and violence.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#action_thriller</IRI>
+        <Literal xml:lang="en">Action thriller (subgenre of thriller genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#autobiography</IRI>
+        <Literal xml:lang="en">Self-written account of the life of oneself.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#autobiography</IRI>
+        <Literal xml:lang="en">Autoiography (subgenre of nonfiction genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#biography</IRI>
+        <Literal xml:lang="en">A narrative of a person&apos;s life</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#biography</IRI>
+        <Literal xml:lang="en">Biography (subgenre of nonfiction genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#crime</IRI>
+        <Literal xml:lang="en">Fiction about a crime, how the criminal gets caught and serve time, and the repercussions of the crime</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#crime</IRI>
+        <Literal xml:lang="en">Crime genre (subgenre of fiction genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#crime_thriller</IRI>
+        <Literal xml:lang="en">In this subgenre of thriller the protagonist must confront a large, powerful organization whose threat only he sees. Usually he must do so alone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#crime_thriller</IRI>
+        <Literal xml:lang="en">Crime thriller (subgenre of thriller and crime genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#detective_fiction</IRI>
+        <Literal xml:lang="en">Detective fiction is a subgenre of crime fiction and mystery fiction in which an investigator or a detective—either professional, amateur or retired—investigates a crime, often murder.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#detective_fiction</IRI>
+        <Literal xml:lang="en">Detective fiction (subgenre of crime genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#epic_fantasy</IRI>
+        <Literal xml:lang="en">High fantasy or epic fantasy is a subgenre of fantasy, defined either by the epic nature of its setting or by the epic stature of its characters, themes, or plot.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#epic_fantasy</IRI>
+        <Literal xml:lang="en">Epic Fantasy (subgenre of fantasy genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fantasy</IRI>
+        <Literal xml:lang="en">Fantasy is a subgenre of fiction genre set in a fictional universe, often inspired by real world myth and folklore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#fantasy</IRI>
+        <Literal xml:lang="en">Fantasy genre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#heroic_fantasy</IRI>
+        <Literal xml:lang="en">Heroic fantasy is a subgenre of fantasy in which events occur in a world where magic is prevalent and modern technology is non-existent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#heroic_fantasy</IRI>
+        <Literal xml:lang="en">Heroic fantasy (subgenre of fantasy genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#horror</IRI>
+        <Literal xml:lang="en">Horror is a genre of fiction which is intended to frighten, scare, disgust, or startle its readers by inducing feelings of horror and terror.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#horror</IRI>
+        <Literal xml:lang="en">Horror genre (subgenre of fiction genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#macabre</IRI>
+        <Literal xml:lang="en">The macabre books to emphasize the details and symbols of death. The term also refers to works particularly gruesome in nature.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#macabre</IRI>
+        <Literal xml:lang="en">Macabre genre (subgenre of horror genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#nostalgic</IRI>
+        <Literal xml:lang="en">Feeling, evoking, or characterized by nostalgia.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#nostalgic</IRI>
+        <Literal xml:lang="en">Nostalgic Tag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#psychological_horror</IRI>
+        <Literal xml:lang="en">Psychological horror is a subgenre of horror and psychological fiction that relies on mental, emotional and psychological states to frighten, disturb, or unsettle its audience.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#psychological_horror</IRI>
+        <Literal xml:lang="en">Psychological horror (subgenre of horror genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#psychological_thriller</IRI>
+        <Literal xml:lang="en">Psychological thriller is a thriller narrative that emphasizes the unstable or delusional psychological states of its characters.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#psychological_thriller</IRI>
+        <Literal xml:lang="en">Psychological thriller (subgenre of thriller genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#spy_novel</IRI>
+        <Literal xml:lang="en">The major characters are spies, usually working for an intelligence agency.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#spy_novel</IRI>
+        <Literal xml:lang="en">Spy novel (subgenre of crime genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#thriller</IRI>
+        <Literal xml:lang="en">Thriller is a genre of fiction, having numerous, often overlapping subgenres. Thrillers are characterized and defined by the moods they elicit, giving viewers heightened feelings of suspense, excitement, surprise, anticipation and anxiety.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#thriller</IRI>
+        <Literal xml:lang="en">Thriller genre (subgenre of fiction genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#travel</IRI>
+        <Literal xml:lang="en">The action of travelling</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#travel</IRI>
+        <Literal xml:lang="en">Travel Tag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#urban_fantasy</IRI>
+        <Literal xml:lang="en">Urban fantasy is a fantastic genre of English-language fiction, or a subgenre of fantasy, in which the narrative uses supernatural elements in an urban society.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#urban_fantasy</IRI>
+        <Literal xml:lang="en">Urban fantasy (subgenre of fantasy genre)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#war</IRI>
+        <Literal xml:lang="en">A state of armed conflict between different countries or different groups within a country.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#war</IRI>
+        <Literal xml:lang="en">War Tag</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Percy_Jackson_&amp;_the_Olympians</IRI>
+        <Literal xml:lang="en">Book serie written by Rick Riordan</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Percy_Jackson_&amp;_the_Olympians</IRI>
+        <Literal xml:lang="en">Percy Jackson &amp; the Olympians</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Percy_Jackson_&amp;_the_Olympians</IRI>
+        <Literal xml:lang="it">Percy Jackson e gli dei dell&apos;Olimpo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#The_Philosopher&apos;s_Stone</IRI>
+        <Literal xml:lang="en">It is the first book of Harry Potter, a book series written by J. K. Rowling.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Philosopher&apos;s_Stone</IRI>
+        <Literal xml:lang="it">Harry Potter: La Pietra Filosofale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#The_Philosopher&apos;s_Stone</IRI>
+        <Literal xml:lang="en">Harry Potter: The Philosopher&apos;s Stone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>rdfs:label</AbbreviatedIRI>
+        <Literal xml:lang="en">Recommendation Ontology Book</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
